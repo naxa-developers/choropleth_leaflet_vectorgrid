@@ -5,7 +5,7 @@
 // ReactDOM.render(<App />, document.getElementById('root'));
 
 import React, { Component } from "react";
-import { withLeaflet } from 'react-leaflet';
+import { Map, withLeaflet } from 'react-leaflet';
 import VectorGridDefault from 'react-leaflet-vectorgrid';
 // import ScrollTab from './ScrollTab';
 const VectorGrid = withLeaflet(VectorGridDefault);

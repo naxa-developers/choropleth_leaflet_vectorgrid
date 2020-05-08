@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/naxadevelopers/naxa-components.git"
+    "url": "git+https://github.com/naxa-developers/choropleth_leaflet_vectorgrid.git"
   },
   "keywords": [],
   "author": "Naxa",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/naxadevelopers/naxa-components/issues"
+    "url": "https://github.com/naxa-developers/choropleth_leaflet_vectorgrid/issues"
   },
-  "homepage": "https://github.com/naxadevelopers/naxa-components#readme",
+  "homepage": "https://github.com/naxa-developers/choropleth_leaflet_vectorgrid#readme",
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
