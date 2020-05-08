@@ -1,0 +1,7 @@
+tests/
+test/
+__tests__/
+__specs__
+setupTest.js
+App.js
+src/MainComponent.js
