@@ -51,7 +51,7 @@ class VectorGridComponent extends Component {
         };
         this.vectorGridRef = React.createRef();
         this.infoDivRef = React.createRef();
-    }
+   
 
     getLegendColor = (value) =>{
         var colorArray = this.props.colorArray;
@@ -189,7 +189,7 @@ class VectorGridComponent extends Component {
         })
 
     }
-
+}
     componentWillMount(){
     
     }
@@ -227,38 +227,41 @@ class VectorGridComponent extends Component {
             subdomains: 'abcd',
             key: 'abcdefghi01234567890',
         };
-        return (
-            <div>
-                <VectorGrid {...options} ref={this.vectorGridRef}></VectorGrid>
-                <div style={{position: "absolute", display: "flex", flexDirection: "column", zIndex: 1999, background: "white", padding: 5, bottom: 0, margin: 5}}>
-                <div>{this.props.choroplethTitle?this.props.choroplethTitle:"Legend"}</div>
-                <div class="map-legend">
-                            {/* <ScrollTab changetheme={this.props.changetheme}/> */}
-                            <ul class="color-legend">
-                    {
-                        this.state.grade && this.state.grade.map((grade,i) => {
-                            var hideLastdiv = false;
-                            hideLastdiv= i == (this.state.grade.length-1)?true:false;
-                            var grade1 = grade<1000?grade.toString():this.getShortNumbers(grade,1);
-                            // uncomment this to add vertical legend
-                            // return <div><div style={{width:"12px", height:"12px", backgroundColor: this.getLegendColor(this.state.grade[i] + 1), border:"solid 1px #e2e2e2", display:"inline-block"}}></div> <span>{this.state.grade[i]} {this.state.grade[i + 1]?"-"+this.state.grade[i + 1]: "+"}</span></div>
-                            // uncomment this to add horizontal legend
-                            // return <div style={{display:"inline-block"}}><div style={{width:"12px", height:"12px", backgroundColor: this.getLegendColor(this.state.grade[i] + 1), border:"solid 1px #e2e2e2", display:"inline-block", marginLeft:"5px"}}></div> <span >{this.state.grade[i]} {this.state.grade[i + 1]?"-"+this.state.grade[i + 1]: "+"}</span></div>
-                            // uncomment this to add nice horizontal legend
-                            return (
-                                <li>
-                                    <div style={{backgroundColor: hideLastdiv?"transparent":this.getLegendColor(grade+1)}} class="color color1"></div>
-                                    <span style={{marginLeft: grade1.trim().length==1?-2:grade1.trim().length==2?-8:-12}}>{grade1}</span>
-                                </li>
-                            )
-                        })
-                    }
-                        </ul>
-                    </div>
-                </div>
-                <div ref={this.infoDivRef} class="infoDiv" style={{display:"none"}}></div>
-            </div>
-        )
+
+        const title = React.createElement('h1', {}, 'My First React Code');
+        return title;
+        // return (
+        //     <div>
+        //         <VectorGrid {...options} ref={this.vectorGridRef}></VectorGrid>
+        //         <div style={{position: "absolute", display: "flex", flexDirection: "column", zIndex: 1999, background: "white", padding: 5, bottom: 0, margin: 5}}>
+        //         <div>{this.props.choroplethTitle?this.props.choroplethTitle:"Legend"}</div>
+        //         <div class="map-legend">
+        //                     {/* <ScrollTab changetheme={this.props.changetheme}/> */}
+        //                     <ul class="color-legend">
+        //             {
+        //                 this.state.grade && this.state.grade.map((grade,i) => {
+        //                     var hideLastdiv = false;
+        //                     hideLastdiv= i == (this.state.grade.length-1)?true:false;
+        //                     var grade1 = grade<1000?grade.toString():this.getShortNumbers(grade,1);
+        //                     // uncomment this to add vertical legend
+        //                     // return <div><div style={{width:"12px", height:"12px", backgroundColor: this.getLegendColor(this.state.grade[i] + 1), border:"solid 1px #e2e2e2", display:"inline-block"}}></div> <span>{this.state.grade[i]} {this.state.grade[i + 1]?"-"+this.state.grade[i + 1]: "+"}</span></div>
+        //                     // uncomment this to add horizontal legend
+        //                     // return <div style={{display:"inline-block"}}><div style={{width:"12px", height:"12px", backgroundColor: this.getLegendColor(this.state.grade[i] + 1), border:"solid 1px #e2e2e2", display:"inline-block", marginLeft:"5px"}}></div> <span >{this.state.grade[i]} {this.state.grade[i + 1]?"-"+this.state.grade[i + 1]: "+"}</span></div>
+        //                     // uncomment this to add nice horizontal legend
+        //                     return (
+        //                         <li>
+        //                             <div style={{backgroundColor: hideLastdiv?"transparent":this.getLegendColor(grade+1)}} class="color color1"></div>
+        //                             <span style={{marginLeft: grade1.trim().length==1?-2:grade1.trim().length==2?-8:-12}}>{grade1}</span>
+        //                         </li>
+        //                     )
+        //                 })
+        //             }
+        //                 </ul>
+        //             </div>
+        //         </div>
+        //         <div ref={this.infoDivRef} class="infoDiv" style={{display:"none"}}></div>
+        //     </div>
+        // )
     }
 }
 export default VectorGridComponent;
