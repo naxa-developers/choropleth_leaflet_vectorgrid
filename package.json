@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "babel --source-maps -d lib/ src/ --config webpack.dev.config.js",
-    "prepublish": "npm run compile --config webpack.dev.config.js",
+    "compile": "babel --source-maps -d lib/ src/ --config webpack.config.js",
+    "prepublish": "npm run compile --config webpack.config.js",
     "minify": "uglifyjs lib/kalman.js --compress --preamble '//kalmanjs, LGPL-3.0, https://github.com/wouterbulten/kalmanjs' --source-map lib/kalman.min.js.map --in-source-map lib/kalman.js.map --mangle -o lib/kalman.min.js"
   },
   "repository": {
