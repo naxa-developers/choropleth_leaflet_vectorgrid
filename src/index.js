@@ -51,7 +51,7 @@ class VectorGridComponent extends Component {
         };
         this.vectorGridRef = React.createRef();
         this.infoDivRef = React.createRef();
-   
+    
 
     this.getLegendColor = (value) =>{
         var colorArray = this.props.colorArray;
