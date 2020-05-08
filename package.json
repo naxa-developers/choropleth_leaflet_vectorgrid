@@ -27,10 +27,10 @@
     "leaflet": "^0.7.0",
     "react": "^0.14.0 || ^15.0.0 || ^16.0.0-rc",
     "react-dom": "^0.14.0 || ^15.0.0 || ^16.0.0-rc",
-    "react-leaflet": "^0.11.5",
-	"react-leaflet-vectorgrid": "^2.2.1"
+    "react-leaflet": "^0.11.5"
   },
   "dependencies": {
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",    
+	  "react-leaflet-vectorgrid": "^2.2.1"
   }
 }
