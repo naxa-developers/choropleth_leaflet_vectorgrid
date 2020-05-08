@@ -1,7 +1,7 @@
 {
-  "name": "naxa-components",
-  "version": "1.0.12",
-  "description": "naxa-components",
+  "name": "choropleth-leaflet-vectorgrid",
+  "version": "1.0.9",
+  "description": "choropleth-leaflet-vectorgrid",
   "mainserver": "http://localhost:8080/",
   "testserver": "http://localhost:8080/",
   "main": "index.js",
