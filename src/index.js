@@ -53,7 +53,7 @@ class VectorGridComponent extends Component {
         this.infoDivRef = React.createRef();
     }
 
-    getLegendColor(value){
+    getLegendColor = (value) =>{
         var colorArray = this.props.colorArray;
         var legendColor = colorArray!=null && colorArray.length>0?colorArray:this.state.legendColors;
         var color = "#f4f4f2";
@@ -66,7 +66,7 @@ class VectorGridComponent extends Component {
         return color;
     }
 
-    changeGrades(){
+    changeGrades = () =>{
         var range = [];
         var data = [];
         
@@ -96,7 +96,7 @@ class VectorGridComponent extends Component {
                 this.setChoroplethStyle(province, fullData);
             }, 200);
     }
-    ChangeLegendColors(){
+    ChangeLegendColors = () =>{
         var choroplethColor = this.props.color;
         var color = choroplethColor!=undefined && choroplethColor.length>0?choroplethColor:"#ff0000";
         var data = this.state.grade;
@@ -106,7 +106,7 @@ class VectorGridComponent extends Component {
             
     }
 
-    setChoroplethStyle(layer, values){
+    setChoroplethStyle = (layer, values) =>{
         values.map((value) => {
             var color = this.getLegendColor(value.count);
             var newStyle= {};
@@ -122,7 +122,7 @@ class VectorGridComponent extends Component {
         })
     }
 
-    getShortNumbers(n,d){
+    getShortNumbers = (n,d) =>{
         var x=(''+n).length;
         var p=Math.pow;
         d=p(10,d)
@@ -130,7 +130,7 @@ class VectorGridComponent extends Component {
         return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]
     }
 
-    label(){
+    label = () =>{
         province = this.vectorGridRef.current.leafletElement;
             map = this.props.mapRef.current.leafletElement;
             if(circleLoad == true){
@@ -153,7 +153,7 @@ class VectorGridComponent extends Component {
             circleLoad = false;
     }
     
-    addMouseoverLayer(){
+    addMouseoverLayer = () =>{
         province = this.vectorGridRef.current.leafletElement;
         var infoDiv = this.infoDivRef.current;
         map = this.props.mapRef.current.leafletElement;
