@@ -4,7 +4,6 @@
   "description": "choropleth-leaflet-vectorgrid",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
     "build": "babel index.js"
   },
   "repository": {
@@ -30,6 +29,7 @@
     "react-leaflet": "^0.11.5"
   },
   "dependencies": {
+    "mocha": "^7.1.2",
     "prop-types": "^15.5.10",
     "react-leaflet-vectorgrid": "^2.2.1"
   }
