@@ -92,7 +92,7 @@ return parseInt(num.toString().replace(/.$/,"0"))>12?parseInt(num.toString().rep
 }
 
 export const calculateRange = (start, end1, step) => {
-    const end = end1;//makeZeroLastNumber(end1);
+    var end = end1;//makeZeroLastNumber(end1);
     var range = [];
     var typeofStart = typeof start;
     var typeofEnd = typeof end;
