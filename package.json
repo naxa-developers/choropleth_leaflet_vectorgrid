@@ -1,6 +1,6 @@
 {
   "name": "naxa-components",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "naxa-components",
   "mainserver": "http://localhost:8080/",
   "testserver": "http://localhost:8080/",
