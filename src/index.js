@@ -221,7 +221,7 @@ class VectorGridComponent extends Component {
         map.addLayer(vt_label_province);
         this.changeGrades();
         this.label();
-        this.addMouseoverLayer();
+        //this.addMouseoverLayer();
 
     }
 
