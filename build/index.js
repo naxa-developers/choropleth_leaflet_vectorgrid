@@ -17018,7 +17018,7 @@ var VectorGridComponent = function (_Component) {
         _this.setChoroplethStyle = _this.setChoroplethStyle.bind(_this);
         _this.getShortNumbers = _this.getShortNumbers.bind(_this);
         _this.label = _this.label.bind(_this);
-        _this.addMouseoverLayer = _this.addMouseoverLayer.bind(_this);
+        // this.addMouseoverLayer = this.addMouseoverLayer.bind(this);
 
         return _this;
     }
@@ -17205,7 +17205,7 @@ var VectorGridComponent = function (_Component) {
             map.addLayer(vt_label_province);
             this.changeGrades();
             this.label();
-            this.addMouseoverLayer();
+            //this.addMouseoverLayer();
         }
     }, {
         key: "componentDidUpdate",
