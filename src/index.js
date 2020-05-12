@@ -43,7 +43,7 @@ class VectorGridComponent extends Component {
             legendColors: [],
             province: null
         };
-        this.infoDivRef = React.createRef();
+        //this.infoDivRef = React.createRef();
 
         this.getLegendColor = this.getLegendColor.bind(this);
         this.changeGrades = this.changeGrades.bind(this);
@@ -155,42 +155,42 @@ class VectorGridComponent extends Component {
             circleLoad = false;
     }
     
-    addMouseoverLayer(){
-        province = this.state.province;
-        var infoDiv = this.infoDivRef.current;
-        map = this.props.mapRef.current.leafletElement;
-        province.on("mouseover",(e)=>{
-            // console.log(e, "ee")
-            infoDiv.style.display = "block";
-            var provName = "";
-            // console.log(provName, "provName")
-            var level = "";
-            if(e.layer.properties.FIRST_PROV!=undefined && e.layer.properties.FIRST_PROV!=null){
-                level = "province";
-                provName = getProvinceName(e.layer.properties.id, "en")
-            }
-            else if(e.layer.properties.FIRST_DISTRICT!=undefined && e.layer.properties.FIRST_DISTRICT!=null){
-                level = "district"
-                provName = getProvinceName(e.layer.properties.provinceId, "en")
-            }
-            else {
-                level = "municipality"
-                provName = getProvinceName(e.layer.properties.provinceId, "en")
-            }
-            var html = `<div style="background: white;padding: 10px;"><span><b>${
-                level == "province"?provName:level == "district"?e.layer.properties.FIRST_DISTRICT:e.layer.properties.Name
-              }</b></span>`; 
-            html+= level != "province"?`,</br><span style="    text-transform: capitalize;">${level=="district"?provName:e.layer.properties.District.toLowerCase()}`:"";
-            html+= level != "province" && level != "district"?`, ${provName}</span></div>`:"";
-            infoDiv.innerHTML = html;
-        });
+    // addMouseoverLayer(){
+    //     province = this.state.province;
+    //     var infoDiv = this.infoDivRef.current;
+    //     map = this.props.mapRef.current.leafletElement;
+    //     province.on("mouseover",(e)=>{
+    //         // console.log(e, "ee")
+    //         infoDiv.style.display = "block";
+    //         var provName = "";
+    //         // console.log(provName, "provName")
+    //         var level = "";
+    //         if(e.layer.properties.FIRST_PROV!=undefined && e.layer.properties.FIRST_PROV!=null){
+    //             level = "province";
+    //             provName = getProvinceName(e.layer.properties.id, "en")
+    //         }
+    //         else if(e.layer.properties.FIRST_DISTRICT!=undefined && e.layer.properties.FIRST_DISTRICT!=null){
+    //             level = "district"
+    //             provName = getProvinceName(e.layer.properties.provinceId, "en")
+    //         }
+    //         else {
+    //             level = "municipality"
+    //             provName = getProvinceName(e.layer.properties.provinceId, "en")
+    //         }
+    //         var html = `<div style="background: white;padding: 10px;"><span><b>${
+    //             level == "province"?provName:level == "district"?e.layer.properties.FIRST_DISTRICT:e.layer.properties.Name
+    //           }</b></span>`; 
+    //         html+= level != "province"?`,</br><span style="    text-transform: capitalize;">${level=="district"?provName:e.layer.properties.District.toLowerCase()}`:"";
+    //         html+= level != "province" && level != "district"?`, ${provName}</span></div>`:"";
+    //         infoDiv.innerHTML = html;
+    //     });
 
-        province.on("mouseout",(e)=>{
-            infoDiv.style.display = "none";
-            infoDiv.innerHTML = "";
-        })
+    //     province.on("mouseout",(e)=>{
+    //         infoDiv.style.display = "none";
+    //         infoDiv.innerHTML = "";
+    //     })
 
-    }
+    // }
 
     componentWillMount(){
         map = this.props.mapRef.current.leafletElement;
@@ -257,7 +257,7 @@ class VectorGridComponent extends Component {
                         </ul>
                     </div>
                 </div>
-                <div ref={this.infoDivRef} class="infoDiv" style={{display:"none"}}></div>
+                {/* <div ref={this.infoDivRef} class="infoDiv" style={{display:"none"}}></div> */}
             </div>
         )
     }
