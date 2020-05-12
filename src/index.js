@@ -51,7 +51,7 @@ class VectorGridComponent extends Component {
         this.setChoroplethStyle = this.setChoroplethStyle.bind(this);
         this.getShortNumbers = this.getShortNumbers.bind(this);
         this.label = this.label.bind(this);
-        this.addMouseoverLayer = this.addMouseoverLayer.bind(this);
+        // this.addMouseoverLayer = this.addMouseoverLayer.bind(this);
 
     }
 
