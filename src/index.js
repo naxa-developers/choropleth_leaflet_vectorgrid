@@ -1,16 +1,9 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './js/Components/App';
-
-// ReactDOM.render(<App />, document.getElementById('root'));
-
 import React, { Component } from "react";
-import { Map, withLeaflet } from 'react-leaflet';
-import VectorGridDefault from 'react-leaflet-vectorgrid';
+import L from "leaflet";
+import "leaflet.vectorgrid";
+import "leaflet.vectorgrid/dist/Leaflet.VectorGrid.bundled";
 // import ScrollTab from './ScrollTab';
-const VectorGrid = withLeaflet(VectorGridDefault);
 import {label_Vector_Tiles, calculateRange, handleZoom, choroplethColorArray, getProvinceName} from "./Functions";
-// import './Developers_css/vectorgrid.css';
 
 var map = {};
 var vt_label_province = L.featureGroup();
@@ -47,13 +40,22 @@ class VectorGridComponent extends Component {
               ],
             choroplethTitle: "dataCategory1",
             grade: [],
-            legendColors: []
+            legendColors: [],
+            province: null
         };
-        this.vectorGridRef = React.createRef();
-        this.infoDivRef = React.createRef();
+        //this.infoDivRef = React.createRef();
+
+        this.getLegendColor = this.getLegendColor.bind(this);
+        this.changeGrades = this.changeGrades.bind(this);
+        this.ChangeLegendColors = this.ChangeLegendColors.bind(this);
+        this.setChoroplethStyle = this.setChoroplethStyle.bind(this);
+        this.getShortNumbers = this.getShortNumbers.bind(this);
+        this.label = this.label.bind(this);
+        // this.addMouseoverLayer = this.addMouseoverLayer.bind(this);
+
     }
 
-    getLegendColor = (value) => {
+    getLegendColor(value) {
         var colorArray = this.props.colorArray;
         var legendColor = colorArray!=null && colorArray.length>0?colorArray:this.state.legendColors;
         var color = "#f4f4f2";
@@ -66,7 +68,7 @@ class VectorGridComponent extends Component {
         return color;
     }
 
-    changeGrades = () =>{
+    changeGrades(){
         var range = [];
         var data = [];
         
@@ -96,7 +98,7 @@ class VectorGridComponent extends Component {
                 this.setChoroplethStyle(province, fullData);
             }, 200);
     }
-    ChangeLegendColors = () =>{
+    ChangeLegendColors(){
         var choroplethColor = this.props.color;
         var color = choroplethColor!=undefined && choroplethColor.length>0?choroplethColor:"#ff0000";
         var data = this.state.grade;
@@ -106,7 +108,7 @@ class VectorGridComponent extends Component {
             
     }
 
-    setChoroplethStyle = (layer, values) =>{
+    setChoroplethStyle(layer, values){
         values.map((value) => {
             var color = this.getLegendColor(value.count);
             var newStyle= {};
@@ -122,7 +124,7 @@ class VectorGridComponent extends Component {
         })
     }
 
-    getShortNumbers = (n,d) =>{
+    getShortNumbers(n,d){
         var x=(''+n).length;
         var p=Math.pow;
         d=p(10,d)
@@ -130,8 +132,8 @@ class VectorGridComponent extends Component {
         return Math.round(n*d/p(10,x))/d+" kMGTPE"[x/3]
     }
 
-    label= () => {
-        province = this.vectorGridRef.current.leafletElement;
+    label(){
+        province = this.state.province;
             map = this.props.mapRef.current.leafletElement;
             if(circleLoad == true){
                 var feature = {properties:{}}
@@ -153,55 +155,73 @@ class VectorGridComponent extends Component {
             circleLoad = false;
     }
     
-    addMouseoverLayer = () =>{
-        province = this.vectorGridRef.current.leafletElement;
-        var infoDiv = this.infoDivRef.current;
-        map = this.props.mapRef.current.leafletElement;
-        province.on("mouseover",(e)=>{
-            // console.log(e, "ee")
-            infoDiv.style.display = "block";
-            var provName = "";
-            // console.log(provName, "provName")
-            var level = "";
-            if(e.layer.properties.FIRST_PROV!=undefined && e.layer.properties.FIRST_PROV!=null){
-                level = "province";
-                provName = getProvinceName(e.layer.properties.id, "en")
-            }
-            else if(e.layer.properties.FIRST_DISTRICT!=undefined && e.layer.properties.FIRST_DISTRICT!=null){
-                level = "district"
-                provName = getProvinceName(e.layer.properties.provinceId, "en")
-            }
-            else {
-                level = "municipality"
-                provName = getProvinceName(e.layer.properties.provinceId, "en")
-            }
-            var html = `<div style="background: white;padding: 10px;"><span><b>${
-                level == "province"?provName:level == "district"?e.layer.properties.FIRST_DISTRICT:e.layer.properties.Name
-              }</b></span>`; 
-            html+= level != "province"?`,</br><span style="    text-transform: capitalize;">${level=="district"?provName:e.layer.properties.District.toLowerCase()}`:"";
-            html+= level != "province" && level != "district"?`, ${provName}</span></div>`:"";
-            infoDiv.innerHTML = html;
-        });
+    // addMouseoverLayer(){
+    //     province = this.state.province;
+    //     var infoDiv = this.infoDivRef.current;
+    //     map = this.props.mapRef.current.leafletElement;
+    //     province.on("mouseover",(e)=>{
+    //         // console.log(e, "ee")
+    //         infoDiv.style.display = "block";
+    //         var provName = "";
+    //         // console.log(provName, "provName")
+    //         var level = "";
+    //         if(e.layer.properties.FIRST_PROV!=undefined && e.layer.properties.FIRST_PROV!=null){
+    //             level = "province";
+    //             provName = getProvinceName(e.layer.properties.id, "en")
+    //         }
+    //         else if(e.layer.properties.FIRST_DISTRICT!=undefined && e.layer.properties.FIRST_DISTRICT!=null){
+    //             level = "district"
+    //             provName = getProvinceName(e.layer.properties.provinceId, "en")
+    //         }
+    //         else {
+    //             level = "municipality"
+    //             provName = getProvinceName(e.layer.properties.provinceId, "en")
+    //         }
+    //         var html = `<div style="background: white;padding: 10px;"><span><b>${
+    //             level == "province"?provName:level == "district"?e.layer.properties.FIRST_DISTRICT:e.layer.properties.Name
+    //           }</b></span>`; 
+    //         html+= level != "province"?`,</br><span style="    text-transform: capitalize;">${level=="district"?provName:e.layer.properties.District.toLowerCase()}`:"";
+    //         html+= level != "province" && level != "district"?`, ${provName}</span></div>`:"";
+    //         infoDiv.innerHTML = html;
+    //     });
 
-        province.on("mouseout",(e)=>{
-            infoDiv.style.display = "none";
-            infoDiv.innerHTML = "";
-        })
+    //     province.on("mouseout",(e)=>{
+    //         infoDiv.style.display = "none";
+    //         infoDiv.innerHTML = "";
+    //     })
 
-    }
+    // }
 
     componentWillMount(){
-    
+        map = this.props.mapRef.current.leafletElement;
+
+        console.log(map , "map in vectorgridjs")
+
+        var style = this.props.style && this.props.style != null?this.props.style:provinceDefaultStyle;
+          var vectorTileOptions = {
+            vectorTileLayerStyles: {
+              Province: style,
+            },
+            //pane: "wmsPane",
+            interactive: true,
+            tms: true,
+            getFeatureId: function(feature) {
+              //console.log("f   ", f);
+              return feature.properties.id;
+            }
+          };
+          const provinceUrl = this.props.vectorGridUrl && this.props.vectorGridUrl != "" && typeof(this.props.vectorGridUrl) == "string"?this.props.vectorGridUrl:"https://geoserver.naxa.com.np/geoserver/gwc/service/tms/1.0.0/Bipad:Province@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf";
+      
+          var provinceLayer = L.vectorGrid.protobuf(provinceUrl, vectorTileOptions).addTo(map);
+          this.setState({province: provinceLayer})
     }
 
     componentDidMount(){
         map = this.props.mapRef.current.leafletElement;
-        province = this.vectorGridRef.current.leafletElement;
-        // console.log(province, "refrefref")
         map.addLayer(vt_label_province);
         this.changeGrades();
         this.label();
-        this.addMouseoverLayer();
+        //this.addMouseoverLayer();
 
     }
 
@@ -209,28 +229,9 @@ class VectorGridComponent extends Component {
     }
 
     render() {
-        const provinceUrl = this.props.vectorGridUrl && this.props.vectorGridUrl != "" && typeof(this.props.vectorGridUrl) == "string"?this.props.vectorGridUrl:"https://geoserver.naxa.com.np/geoserver/gwc/service/tms/1.0.0/Bipad:Province@EPSG%3A900913@pbf/{z}/{x}/{-y}.pbf";
-        // console.log(provinceUrl,"provinceUrl")
-        var style = this.props.style && this.props.style != null?this.props.style:provinceDefaultStyle;
-        // console.log(this.props.style && this.props.style != null?this.props.style:provinceDefaultStyle, "defaultstyle")
-        const options = {
-            type: 'protobuf',
-            // tooltip: (feature) =>{
-            //     console.log(feature, "feature  ")
-            // },
-            getFeatureId: function (feature) {
-                //console.log(feature, "feature  ")
-                return feature.properties.id;
-            },
-            url: provinceUrl,
-            vectorTileLayerStyles: {Province: style},
-            subdomains: 'abcd',
-            key: 'abcdefghi01234567890',
-        };
         return (
             <div>
-                <VectorGrid {...options} ref={this.vectorGridRef}></VectorGrid>
-                <div style={{position: "absolute", display: "flex", flexDirection: "column", zIndex: 1999, background: "white", padding: 5, bottom: 0, margin: 5}}>
+                <div style={{position: "absolute", display: this.props.legend?"flex":"none", flexDirection: "column", zIndex: 1999, background: "white", padding: 5, bottom: 0, margin: 5}}>
                 <div>{this.props.choroplethTitle?this.props.choroplethTitle:"Legend"}</div>
                 <div class="map-legend">
                             {/* <ScrollTab changetheme={this.props.changetheme}/> */}
@@ -256,7 +257,7 @@ class VectorGridComponent extends Component {
                         </ul>
                     </div>
                 </div>
-                <div ref={this.infoDivRef} class="infoDiv" style={{display:"none"}}></div>
+                {/* <div ref={this.infoDivRef} class="infoDiv" style={{display:"none"}}></div> */}
             </div>
         )
     }

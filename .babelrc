@@ -1,14 +1,7 @@
 {
-    "presets": ["@babel/preset-env", "@babel/preset-react"],
+    "presets": ["env"],
     "plugins": [
-      "@babel/plugin-syntax-dynamic-import",
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-throw-expressions"
-    ],
-    "env": {
-      "production": {
-        "plugins": ["transform-remove-console"]
-      }
-    }
+      "transform-object-rest-spread",
+      "transform-react-jsx"
+    ]
   }
-  
