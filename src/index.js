@@ -118,7 +118,7 @@ class VectorGridComponent extends Component {
             newStyle.fillColor = color;
             // newStyle.fillOpacity = 0.7;
             // console.log(color, "color")
-            // console.log(newStyle, "newStyle")
+            console.log(newStyle, "newStyle")
             setTimeout(() => {
                 layer.setFeatureStyle(value.id, newStyle);
             }, 100);
