@@ -64,7 +64,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -81,7 +81,7 @@ exports.handleZoom = exports.handleMarkerZoom = exports.countEqual = exports.get
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _gradstop = __webpack_require__(8);
+var _gradstop = __webpack_require__(11);
 
 var _gradstop2 = _interopRequireDefault(_gradstop);
 
@@ -16935,12 +16935,36 @@ window.L = exports;
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(12);
+            var content = __webpack_require__(7);
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+
+
+module.exports = content.locals || {};
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = require("react");
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16952,7 +16976,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(4);
+var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -16963,6 +16987,8 @@ var _leaflet2 = _interopRequireDefault(_leaflet);
 __webpack_require__(2);
 
 __webpack_require__(1);
+
+__webpack_require__(4);
 
 var _Functions = __webpack_require__(0);
 
@@ -17265,7 +17291,120 @@ var VectorGridComponent = function (_Component) {
 exports.default = VectorGridComponent;
 
 /***/ }),
-/* 6 */
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, "/*legend css*/\r\n\r\n.circle {\r\n  background: rgba(72, 156, 234, 1);\r\n  border-radius: 50%;\r\n  height: 30px;\r\n  width: 30px;\r\n  position: relative;\r\n  /* box-shadow: 0 0 0 5px #F1F1F1; */\r\n  color: #6F0;\r\n  vertical-align: middle;\r\n  /*background-image:\r\n   linear-gradient(to right, transparent 50%, #1276d3 0); */\r\n}\r\n.text_circle {\r\n  margin-bottom: 20px;\r\n  line-height: 30px;\r\n  color: white;\r\n  font-size: 9px;\r\n}\r\n\r\n.dot {\r\n  height: 13px;\r\n  width: 13px;\r\n  background-color: #fff;\r\n  border-radius: 50%;\r\n  display: inline-block; \r\n}\r\n\r\n.dot:hover{\r\n  border: solid 1px #0000ff;\r\n}\r\n\r\n.marker-cluster-large {\r\n  background-color: #F1F1F1 !important;\r\n  width: 35px !important;\r\n  height: 35px !important; \r\n}\r\n.marker-cluster-large div {\r\n  background-color: #489cea !important; \r\n}\r\n.marker-cluster-medium {\r\n  background-color: #F1F1F1 !important;\r\n  width: 35px !important;\r\n  height: 35px !important; \r\n}\r\n.marker-cluster-medium div {\r\n  background-color: #489cea !important; \r\n}\r\n.marker-cluster-small {\r\n  background-color: #F1F1F1 !important;\r\n  width: 35px !important;\r\n  height: 35px !important; \r\n}\r\n.marker-cluster-small div {\r\n  background-color: #489cea !important; \r\n}\r\n.marker-cluster div {\r\n  color: #ffffff;\r\n  width: 27px;\r\n  height: 27px;\r\n  margin-left: 4px;\r\n  margin-top: 4px;\r\n  font: 12px Helvetica Neue,Arial,Helvetica,sans-serif !important; \r\n}\r\n.marker-cluster span {\r\n  line-height: 27px; \r\n}\r\n\r\n.leaflet-div-icon {\r\n  background: none;\r\n  border: none;\r\n  margin-top: -20px !important;\r\n  margin-left: -22px !important;\r\n}\r\n.leaflet-popup{\r\n    margin-left:1px;\r\n}\r\n\r\n.MuiTabs-root {\r\n  min-height: 20px !important;\r\n}\r\n.MuiTab-root{\r\n  font-size: 0.575rem !important;\r\n  min-height: 20px !important;\r\n  padding: 5px 5px !important;\r\n  line-height: 0.75 !important;\r\n  min-width: 0px !important;\r\n}\r\n.PrivateTabScrollButton-root-52 {\r\n  width: 20px !important;\r\n}\r\n.PrivateTabScrollButton-root-141 {\r\n  width: 20px;\r\n}\r\n.PrivateTabIndicator-colorPrimary-68 {\r\n  background-color: \"none\" !important;\r\n  width: 0px !important;\r\n}\r\n.MuiTab-textColorPrimary.Mui-selected {\r\n  border: solid 1px #3f51b5 !important;\r\n  min-width: 0px !important;\r\n}\r\n.MuiTabs-scrollable {\r\n  padding-top: 5px !important;\r\n  padding-bottom: 5px !important;\r\n}\r\n.MuiPaper-elevation4 {\r\n  box-shadow: 0px 0px 0px -1px rgba(0,0,0,0.2), 0px 0px 0px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12) !important;\r\n}\r\n.MuiAppBar-colorDefault {\r\n  background-color: #ffffff !important;\r\n}\r\n\r\n/* ios switch css start */\r\n.MuiTypography-root {\r\n  z-index: 1002;\r\n  background: white;\r\n  padding: 5px;\r\n}\r\n.MuiFormGroup-root {\r\n  margin-right: 15px;\r\n  float: right;\r\n  margin-top: 20px;\r\n}\r\n/* ios switch css end */\r\n.infoDiv{\r\n  z-index: 1002;\r\n  right: 0;\r\n  margin-top: 60px;\r\n  margin-right: 15px;\r\n  position: absolute;\r\n  background: white;\r\n  padding: 5px;\r\n}\r\n\r\n/*map legend css start*/\r\n.map-legend {\r\n  position: relative;\r\n  left: 0;\r\n  bottom: 0;\r\n  z-index: 999;\r\n  right: 0;\r\n  min-width: 270px;\r\n}\r\n.map-legend ul.color-legend {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-pack: start;\r\n  -ms-flex-pack: start;\r\n  justify-content: flex-start;\r\n  -webkit-box-align: stretch;\r\n  -ms-flex-align: stretch;\r\n  align-items: stretch;\r\n  padding: .6125rem;\r\n  background-color: #ffffff;\r\n  border: 1px solid #DCDCDC;\r\n  -webkit-border-radius: 5px;\r\n  -moz-border-radius: 5px;\r\n  -ms-border-radius: 5px;\r\n  border-radius: 5px;\r\n  min-width: 270px;\r\n  margin: 0px;\r\n  padding-left: .8125rem;\r\n}\r\n.map-legend ul.color-legend li {\r\n  -webkit-box-flex: 0;\r\n  -ms-flex: 0 0 40px;\r\n  flex: 0 0 40px;\r\n  max-width: 40px;\r\n  list-style: none;\r\n}\r\n.map-legend ul.color-legend li .color {\r\n  width: 100%;\r\n  height: 18px;\r\n}\r\n/*map legend css end*/", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], " {").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery, dedupe) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    if (dedupe) {
+      for (var i = 0; i < this.length; i++) {
+        // eslint-disable-next-line prefer-destructuring
+        var id = this[i][0];
+
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = [].concat(modules[_i]);
+
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        // eslint-disable-next-line no-continue
+        continue;
+      }
+
+      if (mediaQuery) {
+        if (!item[2]) {
+          item[2] = mediaQuery;
+        } else {
+          item[2] = "".concat(mediaQuery, " and ").concat(item[2]);
+        }
+      }
+
+      list.push(item);
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot || '').concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
+}
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17273,7 +17412,7 @@ exports.default = VectorGridComponent;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _utils = __webpack_require__(7);
+var _utils = __webpack_require__(10);
 
 var defaultOptions = {
   // input color options: hex, rgb or hsl
@@ -17294,7 +17433,7 @@ function gradstop(options) {
 module.exports = gradstop;
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17466,10 +17605,285 @@ var getStops = exports.getStops = function getStops(options) {
 };
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(6);
+module.exports = __webpack_require__(9);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isOldIE = function isOldIE() {
+  var memo;
+  return function memorize() {
+    if (typeof memo === 'undefined') {
+      // Test for IE <= 9 as proposed by Browserhacks
+      // @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+      // Tests for existence of standard globals is to allow style-loader
+      // to operate correctly into non-standard environments
+      // @see https://github.com/webpack-contrib/style-loader/issues/177
+      memo = Boolean(window && document && document.all && !window.atob);
+    }
+
+    return memo;
+  };
+}();
+
+var getTarget = function getTarget() {
+  var memo = {};
+  return function memorize(target) {
+    if (typeof memo[target] === 'undefined') {
+      var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself
+
+      if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+        try {
+          // This will throw an exception if access to iframe is blocked
+          // due to cross-origin restrictions
+          styleTarget = styleTarget.contentDocument.head;
+        } catch (e) {
+          // istanbul ignore next
+          styleTarget = null;
+        }
+      }
+
+      memo[target] = styleTarget;
+    }
+
+    return memo[target];
+  };
+}();
+
+var stylesInDom = [];
+
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+
+  for (var i = 0; i < stylesInDom.length; i++) {
+    if (stylesInDom[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var index = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3]
+    };
+
+    if (index !== -1) {
+      stylesInDom[index].references++;
+      stylesInDom[index].updater(obj);
+    } else {
+      stylesInDom.push({
+        identifier: identifier,
+        updater: addStyle(obj, options),
+        references: 1
+      });
+    }
+
+    identifiers.push(identifier);
+  }
+
+  return identifiers;
+}
+
+function insertStyleElement(options) {
+  var style = document.createElement('style');
+  var attributes = options.attributes || {};
+
+  if (typeof attributes.nonce === 'undefined') {
+    var nonce =  true ? __webpack_require__.nc : null;
+
+    if (nonce) {
+      attributes.nonce = nonce;
+    }
+  }
+
+  Object.keys(attributes).forEach(function (key) {
+    style.setAttribute(key, attributes[key]);
+  });
+
+  if (typeof options.insert === 'function') {
+    options.insert(style);
+  } else {
+    var target = getTarget(options.insert || 'head');
+
+    if (!target) {
+      throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+    }
+
+    target.appendChild(style);
+  }
+
+  return style;
+}
+
+function removeStyleElement(style) {
+  // istanbul ignore if
+  if (style.parentNode === null) {
+    return false;
+  }
+
+  style.parentNode.removeChild(style);
+}
+/* istanbul ignore next  */
+
+
+var replaceText = function replaceText() {
+  var textStore = [];
+  return function replace(index, replacement) {
+    textStore[index] = replacement;
+    return textStore.filter(Boolean).join('\n');
+  };
+}();
+
+function applyToSingletonTag(style, index, remove, obj) {
+  var css = remove ? '' : obj.media ? "@media ".concat(obj.media, " {").concat(obj.css, "}") : obj.css; // For old IE
+
+  /* istanbul ignore if  */
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = replaceText(index, css);
+  } else {
+    var cssNode = document.createTextNode(css);
+    var childNodes = style.childNodes;
+
+    if (childNodes[index]) {
+      style.removeChild(childNodes[index]);
+    }
+
+    if (childNodes.length) {
+      style.insertBefore(cssNode, childNodes[index]);
+    } else {
+      style.appendChild(cssNode);
+    }
+  }
+}
+
+function applyToTag(style, options, obj) {
+  var css = obj.css;
+  var media = obj.media;
+  var sourceMap = obj.sourceMap;
+
+  if (media) {
+    style.setAttribute('media', media);
+  } else {
+    style.removeAttribute('media');
+  }
+
+  if (sourceMap && btoa) {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  } // For old IE
+
+  /* istanbul ignore if  */
+
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    while (style.firstChild) {
+      style.removeChild(style.firstChild);
+    }
+
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var singleton = null;
+var singletonCounter = 0;
+
+function addStyle(obj, options) {
+  var style;
+  var update;
+  var remove;
+
+  if (options.singleton) {
+    var styleIndex = singletonCounter++;
+    style = singleton || (singleton = insertStyleElement(options));
+    update = applyToSingletonTag.bind(null, style, styleIndex, false);
+    remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+  } else {
+    style = insertStyleElement(options);
+    update = applyToTag.bind(null, style, options);
+
+    remove = function remove() {
+      removeStyleElement(style);
+    };
+  }
+
+  update(obj);
+  return function updateStyle(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap) {
+        return;
+      }
+
+      update(obj = newObj);
+    } else {
+      remove();
+    }
+  };
+}
+
+module.exports = function (list, options) {
+  options = options || {}; // Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+  // tags it will allow on a page
+
+  if (!options.singleton && typeof options.singleton !== 'boolean') {
+    options.singleton = isOldIE();
+  }
+
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+
+    if (Object.prototype.toString.call(newList) !== '[object Array]') {
+      return;
+    }
+
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDom[index].references--;
+    }
+
+    var newLastIdentifiers = modulesToDom(newList, options);
+
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+
+      var _index = getIndexByIdentifier(_identifier);
+
+      if (stylesInDom[_index].references === 0) {
+        stylesInDom[_index].updater();
+
+        stylesInDom.splice(_index, 1);
+      }
+    }
+
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
 
 /***/ })
 /******/ ]);

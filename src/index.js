@@ -3,6 +3,7 @@ import L from "leaflet";
 import "leaflet.vectorgrid";
 import "leaflet.vectorgrid/dist/Leaflet.VectorGrid.bundled";
 // import ScrollTab from './ScrollTab';
+import './css/vectorgrid.css';
 import {label_Vector_Tiles, calculateRange, handleZoom, choroplethColorArray, getProvinceName} from "./Functions";
 
 var map = {};
