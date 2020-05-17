@@ -1,6 +1,10 @@
 {
   "name": "naxa-test",
+<<<<<<< HEAD
   "version": "1.0.25",
+=======
+  "version": "1.0.23",
+>>>>>>> e9a71455d14c963067562d4d53322b61ef664d5c
   "description": "Put a description here",
   "main": "build/index.js",
   "peerDependencies": {
@@ -29,8 +33,12 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
+<<<<<<< HEAD
     "babel-preset-env": "^1.5.1",
     "css-loader": "^3.5.3",
     "style-loader": "^1.2.1"
+=======
+    "babel-preset-env": "^1.5.1"
+>>>>>>> e9a71455d14c963067562d4d53322b61ef664d5c
   }
 }
