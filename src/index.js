@@ -116,7 +116,7 @@ class VectorGridComponent extends Component {
             var newStyle1 = this.props.style && this.props.style != null?this.props.style:provinceDefaultStyle;
             Object.assign(newStyle, newStyle1)
             newStyle.fillColor = color;
-            newStyle.fillOpacity = 0.7;
+            // newStyle.fillOpacity = 0.7;
             // console.log(color, "color")
             // console.log(newStyle, "newStyle")
             setTimeout(() => {
